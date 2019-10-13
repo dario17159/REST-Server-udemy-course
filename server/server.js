@@ -1,9 +1,9 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const app = express();
 const colors = require('colors')
 const bodyParser = require('body-parser')
 
+const app = express();
 
 
 require('./config/config')
@@ -14,8 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
     //parse aplication/json
 app.use(bodyParser.json());
 
-//Middleware for user's routes
-app.use(require('./routes/usuario'))
+//Middleware for routes
+app.use(require('./routes/index'))
 
 //Mongoose's Settings 
 mongoose.connect(process.env.URLDB, {
